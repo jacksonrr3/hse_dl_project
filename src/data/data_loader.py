@@ -21,7 +21,7 @@ def download_drones_dataset():
 
 def download_fl_drones_annotations():
     # Clone the repository
-    subprocess.run(["git", "clone", "git@github.com:mwaseema/Drone-Detection.git", "../../Drone-Detection"])
+    subprocess.run(["git", "clone", "https://github.com/mwaseema/Drone-Detection.git", "../../Drone-Detection"])
     
     # Copy annotaion files to the dataset folder
     source_folder = '../../Drone-Detection/annotations/FL-Drones-Dataset/'

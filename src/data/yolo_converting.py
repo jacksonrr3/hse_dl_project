@@ -67,7 +67,7 @@ def process_dataset_to_yolo(raw_image_path, annotation_path, output_path, no_det
                 # Convert annotations
                 yolo_annotations = []
                 for x1, y1, x2, y2 in annotations[idx]:
-                    yolo_annotations.append(futils.convert_to_yolo(x1, y1, x2, y2, img_width, img_height))
+                    yolo_annotations.append(convert_to_yolo(x1, y1, x2, y2, img_width, img_height))
 
                 # Save annotations
                 label_file = os.path.join(labels_output, f"{video_folder}_{idx}.txt")
