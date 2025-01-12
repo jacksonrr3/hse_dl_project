@@ -104,3 +104,21 @@ def categorize_files_by_detections(dataset_labels_dir):
                     no_detections.append(os.path.splitext(filename)[0])
 
     return has_detections, no_detections
+
+
+def get_number_of_files(folder_path, extension):
+    """
+    Counts the number of files in a folder with the given extension.
+
+    Args:
+    - folder_path (str): Path to the folder to search.
+    - extension (str): The file extension to search for (e.g., '.jpg', '.txt').
+
+    Returns:
+    - int: The number of files with the specified extension in the folder.
+    """
+    # List all files in the folder and count those with the given extension
+    file_count = sum(1 for filename in os.listdir(folder_path)
+    if filename.lower().endswith(extension.lower()))
+
+    return file_count
