@@ -36,3 +36,9 @@ dataset/
 # Ignoring video files
 *.avi
 *.mp4
+
+# Model weights
+*.pt
+
+# Ultralytics runs
+runs/
