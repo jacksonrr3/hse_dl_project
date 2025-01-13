@@ -19,8 +19,8 @@ def download_drones_dataset():
     # Unzip the downloaded file
     subprocess.run(["unzip", "download"])
 
-    # Move dataset to the project
-    shutil.move('../cvpr15', '.')
+    # Remove archive file
+    subprocess.run(["rm", "download"])
 
 def download_fl_drones_annotations():
     # Clone the repository
