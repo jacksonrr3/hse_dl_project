@@ -5,7 +5,7 @@ import random
 import yaml
 
 from utils import file_utils as futils
-from config import DRONE_DS_VIDEOS_FOLDER, YOLO_ANNOTATIONS_PATH, YOLO_IMAGES_PATH
+from config import DRONE_DS_VIDEOS_FOLDER, YOLO_ANNOTATIONS_PATH, YOLO_IMAGES_PATH, ANNOTATIONS_FL_DRONES_DS_FOLDER, SRC_ANNOTATIONS_FL_DRONES_FOLDER
 
 def download_drones_dataset():
     # Check if dataset folder exist
@@ -24,14 +24,10 @@ def download_drones_dataset():
 
 def download_fl_drones_annotations():
     # Clone the repository
-    subprocess.run(["git", "clone", "https://github.com/mwaseema/Drone-Detection.git", "../../Drone-Detection"])
-    
-    # Copy annotaion files to the dataset folder
-    source_folder = '../../Drone-Detection/annotations/FL-Drones-Dataset/'
-    destination_folder = '../dataset/annotations/'
+    subprocess.run(["git", "clone", "https://github.com/mwaseema/Drone-Detection.git"])
 
     # Copy the folder and its contents to the new location
-    shutil.copytree(source_folder, destination_folder)
+    shutil.copytree(SRC_ANNOTATIONS_FL_DRONES_FOLDER, ANNOTATIONS_FL_DRONES_DS_FOLDER)
 
 
 def create_yolo_dataset_folders():
@@ -109,7 +105,7 @@ def split_dataset(image_folder, annotation_folder, train_fraction, test_fraction
 
 def create_yaml_file(dataset_root):
     data_yaml = {
-        'path': 'yolo',
+        'path': os.path.join(os.getcwd(), dataset_root),
         'train': 'images/train',
         'val': 'images/val',
         'test': 'images/test',
