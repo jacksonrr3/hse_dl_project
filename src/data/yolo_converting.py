@@ -3,7 +3,7 @@ import cv2
 import random
 import shutil
 
-import file_utils as futils
+from utils import file_utils as futils
 
 
 def convert_to_yolo(x1, y1, x2, y2, img_width, img_height):

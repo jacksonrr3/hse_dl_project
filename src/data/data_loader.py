@@ -4,7 +4,7 @@ import shutil
 import random
 import yaml
 
-import file_utils as futils
+from utils import file_utils as futils
 from config import DRONE_DS_VIDEOS_FOLDER, YOLO_ANNOTATIONS_PATH, YOLO_IMAGES_PATH
 
 def download_drones_dataset():

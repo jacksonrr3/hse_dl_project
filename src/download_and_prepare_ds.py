@@ -2,11 +2,10 @@ import argparse
 import os
 import sys
 
-import cv_utils
-import data_loader as dload
-import data_analysis as da
-import file_utils as futils
-import yolo_converting as yolo_conv
+import utils.cv_utils as cv_utils
+import utils.file_utils as futils
+import data.data_loader as dload
+import data.yolo_converting as yolo_conv
 from config import DRONE_DS_VIDEOS_FOLDER, DATASET_RAW_FOLDER, ANNOTATIONS_FL_DRONES_DS_FOLDER, \
                     YOLO_ANNOTATIONS_PATH, YOLO_IMAGES_PATH
 

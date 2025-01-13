@@ -4,7 +4,7 @@ import random
 import numpy as np
 from matplotlib import pyplot as plt
 
-import file_utils as futils
+from . import file_utils as futils
 from config import ANNOTATIONS_FL_DRONES_DS_FOLDER, DATA_ANALYSIS_FOLDER
 
 
