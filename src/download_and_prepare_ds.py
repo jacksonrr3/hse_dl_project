@@ -53,8 +53,8 @@ def main():
     print("Transform annotations to YOLO format")
     yolo_conv.process_dataset_to_yolo(DATASET_RAW_FOLDER, ANNOTATIONS_FL_DRONES_DS_FOLDER, os.path.dirname(YOLO_ANNOTATIONS_PATH))
     print("Moving images and annotations")
-    print(f"Number of images in dataset: {futils.get_number_of_files(YOLO_IMAGES_PATH)}")
-    print(f"Number of labels in dataset: {futils.get_number_of_files(YOLO_ANNOTATIONS_PATH)}")
+    print(f"Number of images in dataset: {futils.get_number_of_files(YOLO_IMAGES_PATH, '.jpg')}")
+    print(f"Number of labels in dataset: {futils.get_number_of_files(YOLO_ANNOTATIONS_PATH, '.txt')}")
 
     # Step 7: Crop images to 480x480 size and update bbox coordinates in annotations files
     print("Cropping images...")
