@@ -1,0 +1,44 @@
+# Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+env/
+
+# IDE/editor configuration files
+.vscode/
+.idea/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Distribution and build directories
+build/
+dist/
+*.egg-info/
+
+# Pytest cache
+.cache/
+
+# Logs
+*.log
+
+# System-specific files
+.DS_Store
+Thumbs.db
+
+# Ignoring dataset folder
+cvpr15/
+dataset/
+
+# Ignoring video files
+*.avi
+*.mp4
+
+# Model weights
+*.pt
+
+# Ultralytics runs
+runs/
