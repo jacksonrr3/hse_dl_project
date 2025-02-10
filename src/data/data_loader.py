@@ -19,7 +19,7 @@ def download_drones_dataset():
     # Unzip the downloaded file
     subprocess.run(["unzip", "download"])
 
-    # Remove archive file
+    # Move the folder
     subprocess.run(["rm", "download"])
 
 def download_fl_drones_annotations():
