@@ -1,6 +1,9 @@
 import os
 import re
 
+import cv2
+import numpy as np
+
 def rename_files_in_folder(folder_path):
     """
     Renames all files in the folder from the format 'Video_001.txt' to 'Video_1.txt'.
@@ -122,3 +125,19 @@ def get_number_of_files(folder_path, extension):
     if filename.lower().endswith(extension.lower()))
 
     return file_count
+
+def load_image(path):
+ 
+    image = cv2.imread(path)
+     
+    # Convert image in BGR format to RGB.
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+     
+    # Add a batch dimension which is required by the model.
+    image = np.expand_dims(image, axis=0)
+     
+    return image
+
+def create_dir(path):
+    os.makedirs(path, exist_ok=True)
+
