@@ -37,8 +37,5 @@ dataset/
 *.avi
 *.mp4
 
-# Model weights
-*.pt
-
 # Ultralytics runs
 runs/
